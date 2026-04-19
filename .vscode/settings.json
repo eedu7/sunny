@@ -1,0 +1,14 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.addMissingImports.ts": "always",
+        "source.fixAll.eslint": "always",
+        "source.fixAll.prettier": "always",
+        "source.fixAll.ts": "always",
+        "source.organizeImports": "always",
+        "source.removeUnusedImports": "always",
+        "source.sort.json": "always",
+        "source.sortImports": "always"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "explorer.compactFolders": false
+}
