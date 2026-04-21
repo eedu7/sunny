@@ -1,9 +1,11 @@
-import JelloText from "@/components/jello-text";
+import { Header } from "@/components/header";
 
 export default function Home() {
   return (
-    <div className="flex h-screen flex-col">
-      <JelloText text="Sunny" />
+    <div>
+      <div className="px-12 py-4">
+        <Header />
+      </div>
     </div>
   );
 }
