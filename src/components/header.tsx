@@ -1,11 +1,13 @@
+import { cn } from "@/lib/utils";
 import { BellIcon, SearchIcon, UserIcon } from "lucide-react";
+import { Fontdiner_Swanky } from "next/font/google";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuList,
-    navigationMenuTriggerStyle,
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
 } from "./ui/navigation-menu";
 
 export const Header = () => {
@@ -18,10 +20,16 @@ export const Header = () => {
   );
 };
 
+const fontdinerSwanky = Fontdiner_Swanky({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-fontdiner-swanky",
+});
+
 const HeaderLogo = () => {
   return (
     <div>
-      <h1>Logo</h1>
+      <h1 className={cn(fontdinerSwanky.className, "text-xl")}>Salman Hassan</h1>
     </div>
   );
 };
