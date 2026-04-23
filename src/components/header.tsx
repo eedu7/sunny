@@ -12,7 +12,7 @@ import {
 
 export const Header = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="sticky top-0 z-50 mx-auto my-4 flex max-w-7xl items-center justify-between">
       <HeaderLogo />
       <HeaderNavbar />
       <HeaderActionButton />
@@ -34,19 +34,47 @@ const HeaderLogo = () => {
   );
 };
 
+interface NavItem {
+  href: string;
+  title: string;
+}
+
+const navItems: NavItem[] = [
+  {
+    href: "#about",
+    title: "About",
+  },
+  {
+    href: "#projects",
+    title: "Projects",
+  },
+  {
+    href: "#skills",
+    title: "Skills",
+  },
+  {
+    href: "#experience",
+    title: "Experience",
+  },
+  {
+    href: "#blog",
+    title: "Blog",
+  },
+  {
+    href: "#contact",
+    title: "Contact",
+  },
+];
+
 const HeaderNavbar = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem asChild className={navigationMenuTriggerStyle()}>
-          <Link href="#home">Home</Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem asChild className={navigationMenuTriggerStyle()}>
-          <Link href="#about-us">About Us</Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem asChild className={navigationMenuTriggerStyle()}>
-          <Link href="#our-services">Our Services</Link>
-        </NavigationMenuItem>
+        {navItems.map(({ href, title }) => (
+          <NavigationMenuItem key={href} asChild className={navigationMenuTriggerStyle()}>
+            <Link href={href}>{title}</Link>
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   );
