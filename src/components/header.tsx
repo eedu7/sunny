@@ -29,7 +29,9 @@ const fontdinerSwanky = Fontdiner_Swanky({
 const HeaderLogo = () => {
   return (
     <div>
-      <h1 className={cn(fontdinerSwanky.className, "text-xl")}>Salman Hassan</h1>
+      <Button variant="ghost" asChild className={cn(fontdinerSwanky.className, "text-xl")}>
+        <Link href="#hero">Salman Hassan</Link>
+      </Button>
     </div>
   );
 };
