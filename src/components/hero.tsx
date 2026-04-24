@@ -4,11 +4,11 @@ import { Button } from "./ui/button";
 
 export const Hero = () => {
   return (
-    <div id="hero" className="flex h-156 flex-col items-center justify-center space-y-12 font-mono">
+    <div id="hero" className="flex h-screen flex-col items-center justify-center space-y-12 font-mono">
       <div className="mx-auto flex max-w-lg flex-col items-center justify-between gap-4">
-        <h1 className="text-4xl font-bold">Muhammad Salman Hassan</h1>
+        <h1 className="font-bold md:text-4xl">Muhammad Salman Hassan</h1>
         <small className="text-muted-foreground">@sunny</small>
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-center text-xs text-muted-foreground md:text-sm">
           AI engineer building intelligent systems - from LLMs and computer vision to production ML pipelines. Turning
           research into products.
         </p>

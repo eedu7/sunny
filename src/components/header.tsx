@@ -1,5 +1,6 @@
+"use client";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
-import { BellIcon, SearchIcon, UserIcon } from "lucide-react";
 import { Fontdiner_Swanky } from "next/font/google";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -11,11 +12,11 @@ import {
 } from "./ui/navigation-menu";
 
 export const Header = () => {
+  const isMobile = useIsMobile();
   return (
     <div className="sticky top-0 z-50 mx-auto my-4 flex max-w-7xl items-center justify-between">
       <HeaderLogo />
-      <HeaderNavbar />
-      <HeaderActionButton />
+      {!isMobile && <HeaderNavbar />}
     </div>
   );
 };
@@ -79,21 +80,5 @@ const HeaderNavbar = () => {
         ))}
       </NavigationMenuList>
     </NavigationMenu>
-  );
-};
-
-const HeaderActionButton = () => {
-  return (
-    <div>
-      <Button size="icon" variant="ghost">
-        <SearchIcon />
-      </Button>
-      <Button size="icon" variant="ghost">
-        <BellIcon />
-      </Button>
-      <Button size="icon" variant="ghost">
-        <UserIcon />
-      </Button>
-    </div>
   );
 };
